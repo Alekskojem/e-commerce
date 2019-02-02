@@ -1,1 +1,0 @@
-Datails.js
