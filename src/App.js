@@ -7,6 +7,7 @@ import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
+import Contacts from "./components/Contacts";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
       <Details />
       <Cart />
       <Default />
+      <Contacts />
       </React.Fragment>
     );
   }
