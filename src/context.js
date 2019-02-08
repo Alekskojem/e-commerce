@@ -21,18 +21,25 @@ class ProductProvider extends Component {
 
    	const tempProducts = [...this.state.products];
    	tempProducts[0].inCart = true
-   	this.setState(()=>{
+   	this.setState(
+   	 () => {
    		return {products:tempProducts}
-   	})
-   	
-   	}
+   	},
+   	() => {
+   		console.log("State products :", this.state.products[0].inCart);
+   	    console.log("Data products :", this.storeProducts[0].inCart);
+   	    }
+   	 );
+   	};
       render() {
 		 return (
           <ProductContext.Provider value={{
           ...this.state,
           handleDetail:this.handleDetail,
           addToCart:this.addToCart,
-          }}>
+          }}
+          >
+            <button onClic={this.tester}>test me</button>
             {this.props.children}
           </ProductContext.Provider>
          
