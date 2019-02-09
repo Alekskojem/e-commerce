@@ -53,6 +53,9 @@ export default class Details extends Component {
              <ButtonContainer>back to
              products</ButtonContainer>
              </Link>
+             <ButtonContainer>
+             {inCart ? "inCart" : "add to cart"}
+             </ButtonContainer>
              </div>
              </div>
             </div>
