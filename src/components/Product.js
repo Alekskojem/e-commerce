@@ -10,6 +10,7 @@ export default class Product extends Component {
 		return (
           <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
              <div className="card">
+             
              <div
                className="img-container p-5"
                onClick={() => console.log("you clicked me on the image container")}
@@ -31,6 +32,9 @@ export default class Product extends Component {
               	)}
               </button>
              </div>
+               
+      
+
             {/* card footer */}
              <div className="card-footer d-flex justify-content-between">
              <p className="align-self-center mb-0">
