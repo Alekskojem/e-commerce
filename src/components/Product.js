@@ -12,17 +12,19 @@ export default class Product extends Component {
              <div className="card">
              <div
                className="img-container p-5"
-               onClick={() => console.log("you clicked me on the image container")}>
+               onClick={() => console.log("you clicked me on the image container")}
+               >
              <Link to="/details">
              <img src={img} alt="product" className="card-img-top" />
              </Link>
               <button className="cart-btn"
               disabled={inCart ? true : false}
               onClick={() => {console.log("added to the cart");
-              }}>
+              }}
+              >
               {inCart ? (
                 <p className="text-capitalize mb-0" disabled>
-                   {" "} in Cart
+                   {" "} in cart
                 </p>
               	) : (
               	    <i className="fas fa-cart-plus" />
