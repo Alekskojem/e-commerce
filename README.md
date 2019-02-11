@@ -1,3 +1,4 @@
+This e-commerce project, is a second act, to try, to understand what is that React! 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
