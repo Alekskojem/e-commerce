@@ -9,6 +9,7 @@ import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Contacts from "./components/Contacts";
 import Default from "./components/Default";
+import Modal from "./componentsModal";
 
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path="/contacts" component={Contacts} />
           <Route component={Default} />
         </Switch>
+        <Modal />
       </React.Fragment>
     );
   }
