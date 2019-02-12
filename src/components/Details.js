@@ -6,8 +6,9 @@ export default class Details extends Component {
 	render() {
 		return (
           <ProductConsumer>
-          {value =>{
-          const {id,
+        {value => {
+          const {
+          	id,
           	company,
           	img,
           	info,
@@ -62,12 +63,12 @@ export default class Details extends Component {
              >
              {inCart ? "inCart" : "add to cart"}
              </ButtonContainer>
-             </div>
+              </div>
              </div>
             </div>
            </div>
           );
-         }}
+        }}
         </ProductConsumer>
 	);
   }
