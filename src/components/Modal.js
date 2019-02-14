@@ -16,6 +16,14 @@ export default class Modal extends Component {
                 }
 				else{
                 <ModalContainer>
+                  <div className="container">
+                   <div className="row">
+                    <div className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize">
+                     <h5>item added to the cart</h5>
+                    </div>
+                   </div>
+                  </div>
+                 </ModalContainer>
 
 				}
 
@@ -24,3 +32,6 @@ export default class Modal extends Component {
 		);
 	}
 }
+const ModalContainer = styled.div`
+
+`
