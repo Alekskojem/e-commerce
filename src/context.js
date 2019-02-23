@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 import {storeProducts, detailProduct} from "./data";
 const ProductContext = React.createContext();
 //Provider
@@ -8,9 +8,12 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct,
-    cart:[],
+    cart: [],
     modalOpen: false,
-    modalProduct:detailProduct,
+    modalProduct: detailProduct,
+    cartSubTotal: 0,
+    cartTax: 0,
+    cartTotal: 0,
    };
    componentDidMount() {
    	this.setProducts();
@@ -53,20 +56,29 @@ class ProductProvider extends Component {
      }
      ); 
    };
-   openModal = id =>{
+   openModal = id => {
     const product = this.getItem(id);
     this.setState(() => {
-      return{modalProduct:product,modalOpen:true}
-      })
-    }
+      return{modalProduct: product, modalOpen: true };
+      });
+    };
     
-    closeModal = () =>{
-      this.setState(()=>{
-        return{modalOpen:false}
-        })
-        }
-   
-        render() {
+    closeModal = () => {
+      this.setState(()=> {
+        return { modalOpen: false };
+        });
+    };
+      increment = (id) => {
+        console.log('this is increment method');
+      }
+      decrement = (id) => {
+        console.log('this is decrement method');
+      }
+      removeItem = (id) =>{
+        console.log();
+
+      }
+      render() {
 		     return (
           <ProductContext.Provider 
           value={{
