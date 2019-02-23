@@ -8,12 +8,12 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct,
-    cart: [],
+    cart: storeProducts,
     modalOpen: false,
     modalProduct: detailProduct,
     cartSubTotal: 0,
     cartTax: 0,
-    cartTotal: 0,
+    cartTotal: 0
    };
    componentDidMount() {
    	this.setProducts();
@@ -21,8 +21,8 @@ class ProductProvider extends Component {
 
    setProducts = () => {
    	let tempProducts = [];
-   	storeProducts.forEach (item => {
-   		const singleItem = {...item};
+   	storeProducts.forEach(item => {
+   		const singleItem = { ...item };
    		tempProducts = [...tempProducts, singleItem];
     });
    	this.setState(() => {
@@ -30,12 +30,12 @@ class ProductProvider extends Component {
    	});
    };
 
-   getItem = (id) =>{
+   getItem = (id) => {
     const product = this.state.products.find(item => item.id === id);
     return product;
    };
-   handleDetail = (id) => {
-     const product = this.getItem();
+   handleDetail = id => {
+     const product = this.getItem(id);
      this.setState(() => {
       return { detailProduct: product };
      });
@@ -48,7 +48,8 @@ class ProductProvider extends Component {
      product.count = 1;
      const price = product.price;
      product.total = price;
-     this.setState(() => {
+     this.setState(
+      () => {
       return { products: tempProducts, cart: [...this.state.cart, product] };
      },
      () => {
@@ -62,24 +63,23 @@ class ProductProvider extends Component {
       return{modalProduct: product, modalOpen: true };
       });
     };
-    
     closeModal = () => {
-      this.setState(()=> {
+      this.setState(() => {
         return { modalOpen: false };
         });
     };
       increment = (id) => {
-        console.log( 'this is increment method' );
-      }
+        console.log("this is increment method");
+      };
       decrement = (id) => {
-        console.log( 'this is decrement method' );
-      }
-      removeItem = (id) =>{ 
-        console.log ( 'item removed' );
-      }
+        console.log("this is decrement method");
+      };
+      removeItem = (id) => { 
+        console.log ("item removed");
+      };
       clearCart = () => {
-        console.log( 'cart was cleared' );
-      }
+        console.log("cart was cleared");
+      };
       render() {
 		     return (
           <ProductContext.Provider 
@@ -92,14 +92,12 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart,
+          clearCart: this.clearCart
           }}
-          
           >
             {this.props.children}
           </ProductContext.Provider>
-         
-		);
+    );
 	}
 }
 
