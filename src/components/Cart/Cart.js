@@ -11,9 +11,9 @@ export default class Cart extends Component {
           {value => {
           	const {cart} = value;
           	if (cart.length > 0) {
-          		return (
+          	 return (
           	<React.Fragment>
-			<Title name="your" title="cart" />
+			      <Title name="your" title="cart" />
             <CartColumns />
           	</React.Fragment>
              );
