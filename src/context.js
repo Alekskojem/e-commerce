@@ -29,7 +29,7 @@ class ProductProvider extends Component {
    	});
    };
 
-   getItem = (id) => {
+   getItem = id => {
     const product = this.state.products.find(item => item.id === id);
     return product;
    };
@@ -39,7 +39,7 @@ class ProductProvider extends Component {
       return { detailProduct: product };
      });
    };
-   addToCart = (id) => {
+   addToCart = id => {
      let tempProducts = [...this.state.products];
      const index = tempProducts.indexOf(this.getItem(id));
      const product = tempProducts[index];
@@ -72,7 +72,7 @@ class ProductProvider extends Component {
         const selectedProduct = tempCart.find(item => item.id === id);
 
 
-        const index = tempCart.indexOf(celectedProduct);
+        const index = tempCart.indexOf(selectedProduct);
         const product = tempCart[index];
 
         product.count = product.count + 1;
@@ -91,7 +91,7 @@ class ProductProvider extends Component {
         let tempCart = [...this.state.cart];
         const selectedProduct = tempCart.find(item => item.id === id);
 
-        const index = tempCart.indexOf(celectedProduct);
+        const index = tempCart.indexOf(selectedProduct);
         const product = tempCart[index];
   product.count = product.count - 1;
      
